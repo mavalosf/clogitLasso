@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Simulates CBC data from mean vector and covariance matrix</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for simulation {CBCtool}"><tr><td>simulation {CBCtool}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Simulates CBC data from mean vector and covariance matrix</h2>
+
+<h3>Description</h3>
+
+<p>Simulates CBC data from mean vector and covariance matrix
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+simulation(
+  mean0 = mean0,
+  mean1 = mean1,
+  cov0 = cov0,
+  cov1 = cov1,
+  QUALI = NULL,
+  n = 400,
+  propotion = 0.07,
+  replaceNeg = TRUE,
+  minValue = NULL
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>mean0</code></td>
+<td>
+<p>mean p-vector of the negatives, with p=22 predictors</p>
+</td></tr>
+<tr valign="top"><td><code>mean1</code></td>
+<td>
+<p>mean p-vector of the positives, with p=22 predictors</p>
+</td></tr>
+<tr valign="top"><td><code>cov0</code></td>
+<td>
+<p>covariance pxp-matrix of the negatives</p>
+</td></tr>
+<tr valign="top"><td><code>cov1</code></td>
+<td>
+<p>covariance pxp-matrix of the positives</p>
+</td></tr>
+<tr valign="top"><td><code>QUALI</code></td>
+<td>
+<p>Columns of X corresponding to qualitative variables</p>
+</td></tr>
+<tr valign="top"><td><code>n</code></td>
+<td>
+<p>number of observations to be generated</p>
+</td></tr>
+<tr valign="top"><td><code>replaceNeg</code></td>
+<td>
+<p>If TRUE the simulated negative values will be replace either by zero or by a minimal value if the argument minValue is given -&gt; If TRUE the simulated negative values will be replaced either by zero or by a minimal value, if the argument minValue is given</p>
+</td></tr>
+<tr valign="top"><td><code>minValue</code></td>
+<td>
+<p>optional vector of the p minimal values used to replace the simulated negative values -&gt; p-vector of minimal values (X values are expected to be &gt;=0)</p>
+</td></tr>
+<tr valign="top"><td><code>proportion</code></td>
+<td>
+<p>proportion of the minority class (positives)</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>data frame of the simulated data
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+CBCsimulatedData&lt;-simulation(mean0,mean1,cov0,cov1,QUALI= c(21,22))
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>CBCtool</em> version 0.0.0.9000 <a href="00Index.html">Index</a>]</div>
+</body></html>
